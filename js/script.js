@@ -16,6 +16,8 @@ for(let activeLink of activeLinks){
 
     /* add class 'active' to the clicked link */
 
+
+
     /* remove class 'active' from all articles */
 
     const activeArticles = document.querySelectorAll('.posts article.active');
