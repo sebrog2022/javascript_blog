@@ -168,7 +168,7 @@ function generateTags() {
     /* [DONE] split tags into array */
 
     const articleTagsArray = articleTags.split(' ');
-    //rice rissotto sushi cabbage_rolls -> ['rice', 'rissotto', 'sushi', 'cabbage_rolls'];
+    
     //rozdzielamy tagi
     console.log(articleTagsArray);
 
@@ -202,19 +202,19 @@ function generateTags() {
   /* [DONE] END LOOP: for every article: */
   }
 
-  /* [NEW] find list of tags in right column */
+  /* [ find list of tags in right column */
   const tagList = document.querySelector(opts.tagsListSelector);
 
-  /*[NEW]create variable for all links HTML code*/
+  /*[create variable for all links HTML code*/
   const tagsParams = calculateTagsParams(allTags);
-  console.log('tagsParams:', tagsParams);
+ 
   //let allTagsHTML = '';
   const allTagsData = {tags: []};
 
-  /* [NEW] START LOOP: for each tag in allTags: */
+  /*  START LOOP: for each tag in allTags: */
   for(let tag in allTags) {
 
-    /* [NEW] generete code of link and add it to allTagsHTML*/
+    /* [ generete code of link and add it to allTagsHTML*/
     //allTagsHTML += tag + '(' + allTags[tag] + ')'; -zmieniamy ta linie kodu na:
     //allTagsHTML += tagLinkHTML;
     allTagsData.tags.push({
@@ -222,9 +222,9 @@ function generateTags() {
       count: allTags[tag],
       className: calculateTagClass(allTags[tag], tagsParams)
     });
-    /* [NEW] END LOOP: for each tag in allTags */
+    /* LOOP: for each tag in allTags */
   }
-  /* [NEW] add html from allTagsHTML to tagList */
+  /* [ add html from allTagsHTML to tagList */
   //tagList.innerHTML - allTagsHTML;
   tagList.innerHTML = templates.tagCloudLink(allTagsData);
 }
@@ -303,11 +303,6 @@ function addClickListenersToTags() {
 
 addClickListenersToTags();
 
-
-
-// [IN PROGRESS]  Add authors to artickels
-
-// Funkcja opiera sie na funkcji generateTags
 // Nie dodajemy funkcji "split" ani petli iterujacej po tagach
 
 function generateAuthors() {
@@ -316,7 +311,7 @@ function generateAuthors() {
   /*  find all articles */
   const articles = document.querySelectorAll(opts.articleSelector);
 
-  /*  START LOOP: for every article: */
+  /*  start loop: for every article: */
 
   for (let article of articles) {
 
@@ -337,7 +332,7 @@ function generateAuthors() {
     if(!authorRightBar.hasOwnProperty(articleAuthor)){
       authorRightBar[articleAuthor] = 1;
     } else {
-      authorRightBar[articleAuthor]++;  //jesli ten tag znajduje sie w allTags,zwiekszamy licznik wystapien o jeden
+      authorRightBar[articleAuthor]++;  
     }
     authorWrapper.innerHTML = html;
     /* END LOOP: for each tag */
@@ -416,22 +411,20 @@ function authorClickHandler(event) {
 
 }
 
-// [IN PROGRESS]
+
 // Dodajemy funkcje addClickListenersToAuthors wzorujac sie na addClickListenersToTags:
 
-function addClickListenersToAuthors() {
-  /* [DONE] find all links to tags */
+function addClickListenersToAuthors() { 
 
-  const authorLinks= document.querySelectorAll('a[href^="#author-"]');
+  const authorLinks = document.querySelectorAll('a[href^="#author-"]');
 
-  /* [DONE] START LOOP: for each link */
-
-  for (let author of authorLinks) {
-
-    /* [DONE] add tagClickHandler as event listener for that link */
+  for (let author of authorLinks) { 
 
     author.addEventListener('click', authorClickHandler);
 
-  /* [DONE] END LOOP: for each link */
+ 
   }
 }
+
+addClickListenersToAuthors();
+
