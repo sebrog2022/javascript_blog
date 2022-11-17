@@ -16,7 +16,7 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
