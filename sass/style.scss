@@ -2,7 +2,7 @@
 
 /* Variables */
 
-$color-light: #fff;
+
 $color-dark: #444;
 
 $font-logo: 'Sacramento', cursive;
@@ -14,6 +14,9 @@ $font-text: 'Source Sans Pro', sans-serif;
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+
+
 
 body {
   background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
@@ -27,6 +30,7 @@ body {
 .container {
   max-width: 1140px;
   margin: 0 auto;
+  
 }
 
 .section-title {
@@ -57,7 +61,7 @@ body {
 }
 
 .sidebar, .posts {
-  background: $color-light;
+  background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
   margin-right: 10px;
   padding: 40px;
   border: 1px solid $color-dark;

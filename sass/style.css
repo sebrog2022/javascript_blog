@@ -47,7 +47,7 @@ body {
 }
 
 .sidebar, .posts {
-  background: #fff;
+  background-image: linear-gradient(to right bottom, #e4a7db, #d245db, #a22dce, #7d3ac5, #4d56bd);
   margin-right: 10px;
   padding: 40px;
   border: 1px solid #444;
